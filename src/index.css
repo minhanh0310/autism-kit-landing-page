@@ -1,0 +1,1420 @@
+/* --- USER'S DEFAULT VITE STYLES (Giữ lại) --- */
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #1f2937;
+  background-color: #f5f8fc; /* Nền trắng xanh dịu mát */
+}
+
+a {
+  font-weight: 600;
+  color: #10b981; /* Màu link chính */
+  text-decoration: inherit;
+}
+a:hover {
+  color: #059669;
+}
+
+body {
+  margin: 0;
+  display: block; 
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f8fc; 
+  color: #333;
+}
+
+.section-heading {
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #111827;
+}
+
+/* --- HEADER --- */
+.header-container {
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.header-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #10b981; /* Màu xanh lá chính */
+    text-decoration: none;
+}
+
+.nav-links-desktop, .cta-button-header-desktop {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .nav-links-desktop {
+        display: flex;
+        gap: 2rem;
+    }
+    .nav-links-desktop a {
+        color: #4b5563;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-weight: 600;
+    }
+    .nav-links-desktop a:hover {
+        color: #10b981;
+    }
+
+    .cta-button-header-desktop {
+        display: block;
+        background-color: #f97316; /* Màu Cam CTA */
+        color: #fff;
+        padding: 0.5rem 1.25rem;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+    .cta-button-header-desktop:hover {
+        background-color: #ea580c;
+    }
+    .hamburger-btn {
+        display: none;
+    }
+}
+
+.hamburger-btn {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #10b981;
+    padding: 0.5rem;
+}
+
+.nav-links-mobile {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    z-index: 40;
+    transition: max-height 0.3s ease-in-out, padding 0.3s;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0 1rem;
+}
+
+.nav-links-mobile.open {
+    max-height: 500px;
+    padding: 1rem;
+}
+
+.nav-links-mobile a {
+    padding: 0.75rem 0;
+    text-decoration: none;
+    color: #1f2937;
+    border-bottom: 1px solid #f3f4f6;
+    transition: color 0.2s;
+}
+
+.cta-button-mobile {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    background-color: #f97316;
+    color: white !important;
+    padding: 0.75rem 0;
+    border-radius: 10px;
+}
+
+/* --- HERO SECTION (PHONG CÁCH BO TRÒN) --- */
+.hero-section {
+    background-color: #f0fff4; /* Nền xanh lá nhạt */
+    padding: 6rem 1rem;
+    border-bottom-left-radius: 60px; 
+    border-bottom-right-radius: 60px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.08);
+}
+
+.hero-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #4b5563;
+    max-width: 48rem;
+    margin: 0 auto 2rem;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.cta-button-primary {
+    background-color: #10b981;
+    color: #fff;
+    padding: 0.85rem 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+    border: none;
+}
+
+.cta-button-primary:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+}
+
+.cta-button-secondary {
+    color: #10b981;
+    border: 2px solid #10b981;
+    background-color: transparent;
+    padding: 0.85rem 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.cta-button-secondary:hover {
+    background-color: #e6fff7;
+}
+
+.hero-image-placeholder {
+    margin-top: 3rem;
+    height: 250px;
+    background-color: #e0f2f1; /* Màu nền xanh nhạt */
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #059669;
+    overflow: hidden;
+}
+
+/* --- WHY US SECTION --- */
+.whyus-section {
+    padding: 3rem 1rem;
+    background-color: #fff; 
+    margin-top: -30px; 
+    position: relative;
+    z-index: 10;
+}
+
+.whyus-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.whyus-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .whyus-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.whyus-card {
+    padding: 1.5rem;
+    background-color: #f0fff4; /* Nền xanh lá nhạt cho khối */
+    border-radius: 1.5rem; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); 
+}
+
+.whyus-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #f97316; /* Cam cho icon */
+}
+
+.whyus-title {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #10b981;
+    margin-bottom: 0.5rem;
+}
+
+.whyus-description {
+    font-size: 0.95rem;
+    color: #4b5563;
+}
+
+/* JOURNEY VISUAL */
+.journey-visual {
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: #fffbeb; /* Nền vàng/kem nhạt */
+    border-radius: 1.5rem;
+}
+
+.journey-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 2rem;
+}
+
+.journey-steps-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .journey-steps-grid {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 0;
+    }
+    .arrow {
+        font-size: 2rem;
+        color: #f97316; /* Cam cho mũi tên */
+    }
+}
+
+.journey-step {
+    padding: 1rem;
+    border: 2px dashed #ffb571; /* Viền cam */
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 250px;
+}
+
+.step-number {
+    display: inline-block;
+    background-color: #f97316; /* Cam */
+    color: #fff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* --- PRODUCT SECTION V2 --- */
+.product-section {
+    padding: 4rem 1rem;
+    background-color: #f5f8fc;
+}
+
+.product-content {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.kit-grid-v2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .kit-grid-v2 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.kit-card-v2 {
+    padding: 2rem;
+    border-radius: 1.5rem; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.kit-card-v2:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.2);
+}
+
+.kit-icon-v2 {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.kit-title-v2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #10b981;
+    margin-bottom: 0.5rem;
+}
+
+.kit-focus-v2 {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+    min-height: 80px;
+}
+
+.kit-details-btn {
+    background-color: #f97316;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.kit-details-btn:hover {
+    background-color: #ea580c;
+}
+
+/* --- MODAL STYLES --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 1.5rem;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #f97316;
+    z-index: 101;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.modal-close-btn:hover {
+    color: #ef4444;
+}
+
+.modal-header {
+    padding: 2rem;
+    text-align: center;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    color: #1f2937;
+}
+
+.modal-icon {
+    font-size: 3.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin: 0;
+    color: #333;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-focus-title, .modal-contents-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #10b981;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-cta-group {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-cta-video {
+    background-color: #f97316; /* Cam cho CTA Video */
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.modal-cta-video:hover {
+    background-color: #ea580c;
+}
+
+.modal-cta-price {
+    background-color: #10b981; /* Xanh lá cho CTA Mua hàng */
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.modal-cta-price:hover {
+    background-color: #059669;
+}
+
+/* --- ASSESSMENT FORM STYLES --- */
+.assessment-section {
+    background-color: #ff9887; /* Màu đỏ cam nhạt - Thân thiện */
+    padding: 5rem 1rem;
+    color: #fff;
+    border-radius: 0 0 60px 60px; /* Bo tròn dưới */
+    box-shadow: 0 10px 20px rgba(255, 152, 135, 0.4);
+}
+
+.assessment-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    color: #333;
+    text-align: left;
+}
+
+.question-box {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.question-text {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #1f2937;
+}
+
+.options-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.option-label {
+    display: block;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    color: #4b5563;
+}
+
+.option-label:hover {
+    background-color: #f3f4f6;
+}
+
+.option-label input[type="radio"] {
+    margin-right: 0.75rem;
+    accent-color: #10b981;
+}
+
+.progress-text {
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #10b981;
+}
+
+.cta-button-submit {
+    display: block;
+    width: 100%;
+    background-color: #10b981;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button-submit:hover {
+    background-color: #059669;
+}
+
+
+/* --- RESULTS STYLES --- */
+
+.results-box {
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    margin-top: 2rem;
+    color: #1f2937;
+    text-align: center;
+}
+
+.results-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #f97316; /* Màu cam - Thành công */
+    margin-bottom: 1rem;
+}
+
+.results-recommendation {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #fff5e0; /* Nền vàng kem */
+    border-radius: 0.5rem;
+}
+
+.results-note {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-bottom: 2rem;
+}
+
+.cta-button-view-kit {
+    background-color: #f97316;
+    display: inline-block;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.cta-button-view-kit:hover {
+    background-color: #ea580c;
+}
+
+/* --- TESTIMONIAL SECTION --- */
+.testimonial-section {
+    padding: 4rem 1rem;
+    background-color: #f3f4f6; 
+}
+
+/* ... (Các style khác cho Testimonial) ... */
+
+/* --- PRICING SECTION --- */
+.pricing-section {
+    padding: 4rem 1rem;
+    background-color: #fff;
+}
+
+.pricing-card.best-value {
+    border-color: #10b981;
+    background-color: #f0fff4;
+    border-radius: 1.5rem;
+}
+.badge {
+    background-color: #10b981;
+}
+.tier-price {
+    color: #f97316;
+}
+.pricing-card.best-value .cta-button-tier {
+    background-color: #f97316; 
+}
+.subscription-link {
+    color: #f97316;
+}
+
+/* --- FOOTER --- */
+.footer-container {
+    background-color: #1f2937; 
+    color: #fff;
+    padding: 2.5rem 1rem;
+}
+
+.footer-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.footer-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #818cf8; 
+}
+
+.footer-heading {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-text-sm {
+    font-size: 0.875rem;
+    color: #9ca3af;
+    line-height: 1.5;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 2;
+}
+
+.footer-links a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-copyright {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #374151;
+    text-align: center;
+}
+
+.copyright-text {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+
+/* --- ASSESSMENT FORM STYLES --- */
+
+.assessment-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    color: #333;
+    text-align: left;
+}
+
+.question-box {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.question-text {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #1f2937;
+}
+
+.options-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.option-label {
+    display: block;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    color: #4b5563;
+}
+
+.option-label:hover {
+    background-color: #f3f4f6;
+}
+
+.option-label input[type="radio"] {
+    margin-right: 0.75rem;
+    accent-color: #4f46e5;
+}
+
+.progress-text {
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4f46e5;
+}
+
+.cta-button-submit {
+    display: block;
+    width: 100%;
+    background-color: #4f46e5;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button-submit:hover {
+    background-color: #4338ca;
+}
+
+
+/* --- RESULTS STYLES --- */
+
+.results-box {
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    margin-top: 2rem;
+    color: #1f2937;
+    text-align: center;
+}
+
+.results-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #10b981; /* Màu xanh lá cây - Thành công */
+    margin-bottom: 1rem;
+}
+
+.results-recommendation {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #e0f2f1;
+    border-radius: 0.5rem;
+}
+
+.results-note {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-bottom: 2rem;
+}
+
+.cta-button-view-kit {
+    display: inline-block;
+    background-color: #ef4444; /* Màu đỏ nổi bật */
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.cta-button-view-kit:hover {
+    background-color: #dc2626;
+}
+
+/* --- WHY US SECTION (WHYUS) --- */
+.whyus-section {
+    padding: 3rem 1rem;
+    background-color: #f0f4ff; /* Màu nền rất nhẹ */
+}
+
+.whyus-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.whyus-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .whyus-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.whyus-card {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.whyus-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.whyus-title {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #4f46e5;
+    margin-bottom: 0.5rem;
+}
+
+.whyus-description {
+    font-size: 0.95rem;
+    color: #4b5563;
+}
+
+/* JOURNEY VISUAL */
+.journey-visual {
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: #eef2ff;
+    border-radius: 1rem;
+}
+
+.journey-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 2rem;
+}
+
+.journey-steps-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .journey-steps-grid {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 0;
+    }
+    .arrow {
+        font-size: 2rem;
+        color: #4f46e5;
+    }
+}
+
+.journey-step {
+    padding: 1rem;
+    border: 1px dashed #4f46e5;
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 250px;
+}
+
+.step-number {
+    display: inline-block;
+    background-color: #4f46e5;
+    color: #fff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* --- PRICING SECTION --- */
+.pricing-section {
+    padding: 4rem 1rem;
+    background-color: #fff;
+}
+
+.pricing-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ANCHORING */
+.anchoring-box {
+    font-size: 1.25rem;
+    color: #1f2937;
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+.anchoring-old-price {
+    color: #ef4444; /* Màu đỏ */
+    margin-left: 0.5rem;
+    font-weight: 700;
+}
+
+.anchoring-text {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+/* PRICING GRID */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.pricing-card {
+    padding: 2rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.pricing-card.best-value {
+    border-color: #4f46e5;
+    background-color: #f9f9ff;
+    transform: scale(1.03);
+}
+
+.pricing-card.best-value:hover {
+    box-shadow: 0 15px 20px rgba(79, 70, 229, 0.2);
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4f46e5;
+    color: #fff;
+    padding: 0.25rem 1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.tier-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.tier-price {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #4f46e5;
+    margin-bottom: 0.5rem;
+}
+
+.tier-target {
+    font-size: 0.95rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px dashed #e5e7eb;
+    padding-bottom: 1.5rem;
+}
+
+.tier-features-list {
+    text-align: left;
+    margin-bottom: 2rem;
+    min-height: 120px; /* Đảm bảo chiều cao đồng nhất */
+}
+
+.feature-item {
+    font-size: 1rem;
+    color: #374151;
+    line-height: 1.8;
+}
+
+.cta-button-tier {
+    display: block;
+    width: 85%;
+    background-color: #4f46e5;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.pricing-card.best-value .cta-button-tier {
+    background-color: #ef4444; /* Màu đỏ cho gói tốt nhất */
+}
+
+.pricing-card.best-value .cta-button-tier:hover {
+    background-color: #dc2626;
+}
+
+/* SUBSCRIPTION CTA */
+.subscription-cta {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+    font-size: 1rem;
+    color: #4b5563;
+}
+
+.subscription-link {
+    color: #4f46e5;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+    margin-left: 0.5rem;
+}
+
+/* --- PRODUCT SECTION V2 (KIT DISPLAY) --- */
+.kit-grid-v2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .kit-grid-v2 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.kit-card-v2 {
+    padding: 2rem;
+    border-radius: 1.5rem; /* Bo tròn mạnh mẽ */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.kit-card-v2:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.1);
+}
+
+.kit-icon-v2 {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.kit-title-v2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.kit-focus-v2 {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+    min-height: 80px;
+}
+
+.kit-details-btn {
+    background-color: #4f46e5;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.kit-details-btn:hover {
+    background-color: #3730a3;
+}
+
+/* --- MODAL STYLES --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 1.5rem;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #4f46e5;
+    z-index: 101;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.modal-close-btn:hover {
+    color: #ef4444;
+}
+
+.modal-header {
+    padding: 2rem;
+    text-align: center;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    color: #1f2937;
+}
+
+.modal-icon {
+    font-size: 3.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin: 0;
+    color: #333;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-focus-title, .modal-contents-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #4f46e5;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-focus-text {
+    font-style: italic;
+    color: #6b7280;
+}
+
+.modal-contents-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: #333;
+}
+
+.modal-cta-group {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-cta-video, .modal-cta-price {
+    display: block;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.modal-cta-video {
+    background-color: #ef4444; /* Đỏ */
+    color: white;
+}
+
+.modal-cta-video:hover {
+    background-color: #dc2626;
+}
+
+.modal-cta-price {
+    background-color: #4f46e5; /* Xanh */
+    color: white;
+}
+
+.modal-cta-price:hover {
+    background-color: #3730a3;
+}
+
+/* --- TESTIMONIAL SECTION (BỔ SUNG) --- */
+.testimonial-section {
+    padding: 4rem 1rem;
+    background-color: #f3f4f6; 
+}
+
+.testimonial-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Bố cục Grid cho các Card */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem; /* Khoảng cách giữa các thẻ */
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr); /* Chia 2 cột trên desktop */
+    }
+}
+
+/* Định dạng từng Thẻ Testimonial */
+.testimonial-card {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 1.5rem; /* Bo tròn lớn */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08); /* Đổ bóng nhẹ */
+    transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-quote {
+    color: #4b5563;
+    font-size: 1.05rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.testimonial-name {
+    font-weight: 700;
+    color: #10b981; /* Màu xanh lá chính */
+    margin-top: 1rem;
+    display: block;
+}
+
+.testimonial-title {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.testimonial-link-wrapper {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.testimonial-link {
+    color: #f97316; /* Màu cam nổi bật */
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid #f97316;
+    transition: color 0.3s;
+}
+
+.testimonial-link:hover {
+    color: #ea580c;
+}
