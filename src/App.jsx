@@ -1,42 +1,63 @@
 import React, { useState } from 'react';
-import './index.css'; 
 import Header from './components/Header';
 import HeroSection from './sections/HeroSection';
 import WhyUsSection from './sections/WhyUsSection';
 import ProductSection from './sections/ProductSection';
-import AssessmentSection from './sections/AssessmentSection';
-import PricingSection from './sections/PricingSection';
+import PricingSection from './sections/PricingSection'; // Chứa SubscriptionModal
 import TestimonialSection from './sections/TestimonialSection';
+import VideoSection from './sections/VideoSection';
 import Footer from './components/Footer';
+
+// Import Modal Components
 import KitDetailModal from './components/KitDetailModal';
+import CheckoutModal from './components/CheckoutModal'; // <--- Import mới
 
 function App() {
-  // State quản lý Modal chi tiết Kit
   const [selectedKit, setSelectedKit] = useState(null);
+  
+  // State quản lý Checkout Form
+  const [checkoutProduct, setCheckoutProduct] = useState(null);
 
-  const handleOpenModal = (kitData) => {
-    setSelectedKit(kitData);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedKit(null);
+  // Hàm mở form checkout (Được gọi từ KitModal hoặc PricingSection)
+  const handleOpenCheckout = (productInfo) => {
+    setCheckoutProduct(productInfo);
+    // Nếu đang mở Kit Detail thì đóng lại để hiện form checkout cho thoáng
+    setSelectedKit(null); 
   };
 
   return (
     <div className="app-container">
       <Header />
-      <main>
-        <HeroSection />
-        <WhyUsSection />
-        <ProductSection onKitClick={handleOpenModal} />
-        <AssessmentSection />
-        <PricingSection />
-        <TestimonialSection />
-      </main>
-      <Footer />
+      <HeroSection />
+      <WhyUsSection />
+      <VideoSection />
       
-      {/* Component Modal */}
-      <KitDetailModal kit={selectedKit} onClose={handleCloseModal} />
+      {/* Truyền hàm mở form checkout xuống các section con */}
+      <ProductSection onKitClick={setSelectedKit} />
+      
+      <PricingSection onOpenCheckout={handleOpenCheckout} />
+
+      <TestimonialSection />
+      <Footer />
+
+      {/* --- MODALS --- */}
+      
+      {/* Modal chi tiết sản phẩm */}
+      {selectedKit && (
+        <KitDetailModal 
+          kit={selectedKit} 
+          onClose={() => setSelectedKit(null)} 
+          onOpenCheckout={handleOpenCheckout} // <--- Truyền hàm này vào
+        />
+      )}
+
+      {/* Modal Checkout Form (Luôn nằm trên cùng) */}
+      {checkoutProduct && (
+        <CheckoutModal 
+          product={checkoutProduct} 
+          onClose={() => setCheckoutProduct(null)} 
+        />
+      )}
     </div>
   );
 }

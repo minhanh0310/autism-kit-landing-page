@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react'; // <--- 1. Nhớ import useState
 import { pricingTiers, anchoringValue } from '../data/pricingData';
+import SubscriptionModal from '../components/SubscriptionModal'; // <--- 2. Import Modal
 
-const PricingSection = () => {
+const PricingSection = ({onOpenCheckout}) => {
+    // 3. State quản lý popup subscription
+    const [isSubModalOpen, setIsSubModalOpen] = useState(false);
+
+    const handleOpenSub = (e) => {
+        e.preventDefault(); // Ngăn load lại trang
+        setIsSubModalOpen(true);
+    };
+
     return (
         <section id="pricing" className="pricing-section">
             <div className="pricing-container">
@@ -12,7 +21,7 @@ const PricingSection = () => {
                 <div className="anchoring-box">
                     Giá trị tương đương dịch vụ chuyên gia 1-1: 
                     <del className="anchoring-old-price">{anchoringValue}</del>
-                    <span className="anchoring-text"> (Hiệu ứng Mỏ neo)</span>
+                    <span className="anchoring-text"> </span>
                 </div>
 
                 <div className="pricing-grid">
@@ -33,7 +42,7 @@ const PricingSection = () => {
                                 ))}
                             </div>
                             
-                            <a href="#test" className="cta-button-tier">
+                            <a href="#product" className="cta-button-tier">
                                 {tier.isBestValue ? 'ĐĂNG KÝ NGAY' : 'TÌM HIỂU THÊM'}
                             </a>
                         </div>
@@ -42,12 +51,22 @@ const PricingSection = () => {
 
                 <div className="subscription-cta">
                     <p>Cần hỗ trợ chuyên môn liên tục? </p>
-                    <a href="#" className="subscription-link">
+                    
+                    {/* 4. Gắn sự kiện click mở popup */}
+                    <a href="#" className="subscription-link" onClick={handleOpenSub}>
                         Xem Gói Hỗ Trợ Theo Dõi (Subscription) → (150.000₫/tháng)
                     </a>
                 </div>
             </div>
+
+            {/* 5. Hiển thị Modal nếu state = true */}
+            {isSubModalOpen && (
+                <SubscriptionModal onClose={() => setIsSubModalOpen(false)} 
+                    onOpenCheckout={onOpenCheckout} />
+            )}
         </section>
+
+        
     );
 };
 

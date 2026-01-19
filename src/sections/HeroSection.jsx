@@ -1,4 +1,5 @@
 import React from 'react';
+import heroImage from '../assets/images/hero-child-learning.jpg';
 
 const HeroSection = () => {
   return (
@@ -19,7 +20,11 @@ const HeroSection = () => {
           </a>
         </div>
         <div className="hero-image-placeholder">
-             [Ảnh trẻ em cười tươi đang học]
+         <img 
+          src={heroImage}
+          alt="Trẻ em đang vui vẻ học tập với bộ đồ chơi AutismKit" 
+          className="hero-image"
+  />
         </div>
       </div>
     </section>
