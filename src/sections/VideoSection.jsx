@@ -10,10 +10,10 @@ const VideoSection = () => {
     <section id="video" className="video-section">
       <div className="video-container">
         <h2 className="section-heading">
-          Góc Chuyên Gia: Hướng Dẫn Can Thiệp Đúng Cách
+           Hướng Dẫn Can Thiệp Đúng Cách
         </h2>
         <p className="video-intro">
-            Xem video hướng dẫn thực tế từ chuyên gia để hiểu rõ cách sử dụng bộ Kit hiệu quả nhất cho con bạn.
+            Xem video hướng dẫn thực tế để hiểu rõ cách sử dụng bộ Kit hiệu quả nhất cho con bạn.
         </p>
         
         <div className="video-wrapper">

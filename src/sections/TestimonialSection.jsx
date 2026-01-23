@@ -13,7 +13,7 @@ const TestimonialSection = () => {
     <section id="review" className="testimonial-section">
       <div className="testimonial-container">
         <h2 className="section-heading">
-          Chuyên Gia và Giáo Viên Nói Gì?
+           Giáo Viên Nói Gì?
         </h2>
         <div className="testimonial-grid">
             <TestimonialCard
@@ -28,7 +28,7 @@ const TestimonialSection = () => {
             />
         </div>
         <p className="testimonial-link-wrapper">
-            <a href="#video" className="testimonial-link">Xem Video Chuyên Gia Giới Thiệu Ngay →</a>
+            <a href="#video" className="testimonial-link">Xem Video Hướng Dẫn Giới Thiệu Ngay →</a>
         </p>
       </div>
     </section>

@@ -30,9 +30,7 @@ function App() {
       
       <WhyUsSection />
       
-      {/* --- BỔ SUNG LẠI SECTION BÀI TEST Ở ĐÂY --- */}
       <AssessmentSection /> 
-      {/* ----------------------------------------- */}
 
       <VideoSection />
       

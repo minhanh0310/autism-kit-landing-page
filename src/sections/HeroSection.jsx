@@ -9,7 +9,7 @@ const HeroSection = () => {
           Giải Pháp Can Thiệp Toàn Diện Cho Trẻ Tự Kỷ 4-8 Tuổi
         </h1>
         <p className="hero-subtitle">
-          Kết hợp Bộ Đồ Chơi Chuyên Biệt và Video Hướng Dẫn Chi Tiết từ Chuyên Gia, giúp Cha Mẹ (BME) đồng hành hiệu quả cùng con tại nhà.
+          Kết hợp Bộ Đồ Chơi Chuyên Biệt và Video Hướng Dẫn Chi Tiết Cơ Bản, giúp Cha Mẹ (BME) đồng hành hiệu quả cùng con tại nhà.
         </p>
         <div className="hero-actions">
           <a href="#test" className="cta-button-primary">

@@ -40,7 +40,7 @@ export const productKits = [
                 name: "Standard Bundle",
                 image: standardSensory,
                 price: "750.000₫",
-                description: "Gói tiêu chuẩn bổ sung thêm video hướng dẫn từ chuyên gia giúp cha mẹ tương tác đúng cách.",
+                description: "Gói tiêu chuẩn bổ sung thêm video hướng dẫn từ  giúp cha mẹ tương tác đúng cách.",
                 contents: [
                     'Bóng gai + Túi cát + Đèn đổi màu',
                     'Bảng cảm ứng xúc giác (Texture Board)',
@@ -52,12 +52,12 @@ export const productKits = [
                 name: "Premium Bundle",
                 image: premiumSensory,
                 price: "1.200.000₫",
-                description: "Giải pháp toàn diện nhất với đầy đủ công cụ và sự hỗ trợ trực tiếp 1-1 từ chuyên gia.",
+                description: "Giải pháp toàn diện nhất với đầy đủ công cụ và sự hỗ trợ trực tiếp 1-1 .",
                 contents: [
                     'Full bộ đồ chơi (Bóng, Đèn, Bảng, Fidget Tools)',
                     'Kho Video bài giảng chuyên sâu trọn đời',
                     'Bộ Test đánh giá định kỳ',
-                    '1 buổi tư vấn 1-1 với chuyên gia'
+                    '1 buổi tư vấn 1-1 '
                 ]
             }
         }

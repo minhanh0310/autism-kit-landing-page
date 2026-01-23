@@ -6,7 +6,7 @@ export const pricingTiers = [
         features: [
             "Đồ chơi vật lý chuyên biệt",
             "Hướng dẫn sử dụng in màu (PDF cơ bản)",
-            "❌ Không kèm Video chuyên gia",
+            "❌ Không kèm Video hướng dẫn",
             "❌ Không có Bộ Test đánh giá",
         ],
         isBestValue: false,
@@ -17,7 +17,7 @@ export const pricingTiers = [
         target: "Cha mẹ muốn có hướng dẫn chuyên môn cơ bản",
         features: [
             "Đồ chơi vật lý chuyên biệt (cải tiến nhỏ)",
-            "Video hướng dẫn chuyên gia (truy cập 6 tháng)",
+            "Video hướng dẫn cơ bản (truy cập 6 tháng)",
             "Bộ Test online cơ bản",
             "Tham gia nhóm Zalo hỗ trợ",
         ],

@@ -9,7 +9,7 @@ const Header = () => {
 
   const menuItems = [
     { href: "#product", text: "Bộ Kit" },
-    { href: "#video", text: "Video Chuyên gia" },
+    { href: "#video", text: "Video Hướng Dẫn" },
     { href: "#test", text: "Test Đánh giá" },
     { href: "#review", text: "Đánh giá" },
   ];

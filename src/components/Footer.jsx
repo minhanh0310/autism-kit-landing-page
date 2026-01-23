@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-col">
           <h4 className="footer-logo">AutismKit</h4>
-          <p className="footer-text-sm">Giải pháp kết hợp Đồ chơi chuyên biệt và Hướng dẫn trị liệu từ chuyên gia.</p>
+          <p className="footer-text-sm">Giải pháp kết hợp Đồ chơi chuyên biệt và Hướng dẫn trị liệu .</p>
         </div>
         <div className="footer-col">
           <h4 className="footer-heading">Hỗ trợ</h4>

@@ -19,7 +19,7 @@ const PricingSection = ({onOpenCheckout}) => {
                 </h2>
                 
                 <div className="anchoring-box">
-                    Giá trị tương đương dịch vụ chuyên gia 1-1: 
+                    Giá trị tương đương dịch vụ AutismKit 1-1: 
                     <del className="anchoring-old-price">{anchoringValue}</del>
                     <span className="anchoring-text"> </span>
                 </div>

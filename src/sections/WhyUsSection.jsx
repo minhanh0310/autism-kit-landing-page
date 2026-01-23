@@ -13,7 +13,7 @@ const WhyUsSection = () => {
                         <span className="whyus-icon">🎓</span>
                         <h3 className="whyus-title">Được Kiểm Duyệt Chuyên Môn</h3>
                         <p className="whyus-description">
-                            Nội dung video và bộ test được thiết kế bởi chuyên gia trị liệu được chứng nhận.
+                            Nội dung video và bộ test.
                         </p>
                     </div>
 
@@ -46,7 +46,7 @@ const WhyUsSection = () => {
                         <div className="journey-step">
                             <span className="step-number">2</span>
                             <h4>INTERVENE & PLAY</h4>
-                            <p>Sử dụng Kit + Video theo gợi ý chuyên gia.</p>
+                            <p>Sử dụng Kit + Video hướng dẫn.</p>
                         </div>
                         <span className="arrow">→</span>
                         <div className="journey-step">
