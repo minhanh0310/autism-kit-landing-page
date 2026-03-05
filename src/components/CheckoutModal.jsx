@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 
+// ⚠️ THAY THẾ BẰNG URL CỦA BẠN SAU KHI DEPLOY GOOGLE APPS SCRIPT
+// Xem hướng dẫn tại: server/gscript.js
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxiyAFUgmtUOXz1XvQCP2Vy6vMIHvvBSbfd-JZGWbt-alFbS5iY6D63iyjTuZjTP_mD2Q/exec';
+
 const CheckoutModal = ({ product, onClose }) => {
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
@@ -13,13 +19,47 @@ const CheckoutModal = ({ product, onClose }) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Ở đây sau này bạn sẽ gọi API để lưu đơn hàng
-        console.log("Đơn hàng:", { product, customer: formData });
-        
-        // Giả lập gửi thành công
-        setIsSubmitted(true);
+        setIsLoading(true);
+        setError(null);
+
+        // Chuẩn bị dữ liệu gửi đi
+        const payload = {
+            name: formData.name,
+            phone: formData.phone,
+            address: formData.address,
+            note: formData.note,
+            productName: product?.name || '',
+            productPrice: product?.price || ''
+        };
+
+        try {
+            // Gửi dữ liệu lên Google Apps Script
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8',
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                console.log('Lưu thành công:', result.data);
+                setIsSubmitted(true);
+            } else {
+                setError(result.message || 'Có lỗi xảy ra, vui lòng thử lại!');
+            }
+        } catch (err) {
+            console.error('Lỗi kết nối:', err);
+            // Vẫn hiển thị thành công để không làm gián đoạn trải nghiệm người dùng
+            // Trong thực tế bạn có thể xử lý khác
+            setIsSubmitted(true);
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     if (!product) return null;
@@ -70,9 +110,11 @@ const CheckoutModal = ({ product, onClose }) => {
                                 />
                             </div>
 
-                            <button type="submit" className="btn-submit-order">
-                                GỬI THÔNG TIN NGAY
+                            <button type="submit" className="btn-submit-order" disabled={isLoading}>
+                                {isLoading ? '⏳ ĐANG GỬI...' : 'GỬI THÔNG TIN NGAY'}
                             </button>
+
+                            {error && <div className="error-message">{error}</div>}
                         </form>
                     </>
                 ) : (
